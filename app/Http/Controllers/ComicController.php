@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
-class ComicsController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class ComicsController extends Controller
     {
         $comics = Comic::all();
 
-        return view('comics.index', compact('comics'));
+        return view('comics.index');
     }
 
     /**
@@ -48,7 +49,7 @@ class ComicsController extends Controller
      */
     public function show(Comic $comics)
     {
-        //
+        return view('comic');
     }
 
     /**
