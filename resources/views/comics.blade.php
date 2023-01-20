@@ -1,5 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <h1>sono la comics</h1>
+@foreach ($comics as $comic)
+    <div>{{ $comic->title }}</div>
+@endforeach
 @endsection
