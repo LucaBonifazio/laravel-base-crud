@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <div class="bg_container" style="color: white">
+    <div class="bg_container p-5" style="color: white">
         <form method="post" action="{{ route('comics.update', ['comic' => $comic]) }}">
             @csrf
             @method('put')
@@ -29,7 +29,7 @@
                 <label for="type" class="form-label">Type</label>
                 <input type="text" class="form-control" id="type" name="type" value="{{ $comic->type }}">
             </div>
-            <button type="submit" class="btn btn-primary">Edit</button>
+            <button type="submit" class="btn btn-warning">Edit</button>
             <button class="btn btn-danger">Delete</button>
         </form>
     </div>
