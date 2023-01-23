@@ -9,6 +9,9 @@
         <script src="{{ asset('js/app.js') }}"></script>
 
         <style>
+            body {
+                background-color: rgb(29, 29, 29);
+            }
             a {
             text-decoration: none;
             }

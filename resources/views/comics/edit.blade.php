@@ -30,6 +30,7 @@
                 <input type="text" class="form-control" id="type" name="type" value="{{ $comic->type }}">
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
         </form>
     </div>
 @endsection
