@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+    private $validationChecks = [
+        'thumb'         => 'nullable|required|max:200',
+        'title'         => 'string|required|max:100',
+        'description'   => 'string|required|max:2000',
+        'price'         => 'integer|required|max:16777215',
+        'series'        => 'string|required|max:150',
+        'sale_date'     => 'date|required|max:255',
+        'type'          => 'string|required|max:150',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -38,10 +47,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validationChecks);
+
         $data = $request->all();
         // dd($data);
-
-        // TODO: validation
 
         // salvataggio dei dati nel database
         $comic = new Comic;
@@ -88,6 +97,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate($this->validationChecks);
+
         $data = $request->all();
 
         $comic->thumb         = $data['thumb'];
