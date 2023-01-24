@@ -8,3 +8,17 @@ body,
 .bg_container {
     background-color: rgb(29, 29, 29);
 }
+
+.overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+}
+
+.delete_confirm {
+    margin: auto;
+    width: 250px;
+    background-color: white;
+    border-radius: 1rem;
+}

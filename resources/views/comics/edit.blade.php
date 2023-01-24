@@ -7,7 +7,7 @@
             @method('put')
             <div class="mb-3">
                 <label for="thumb" class="form-label">Image</label>
-                <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ $comic->thumb }}">
+                <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ old('thumb', $comic->thumb) }}">
                 @error('thumb')
                     <div class="invalid-feedback">
                         Please choose a image.
@@ -15,7 +15,7 @@
                 @enderror
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ $comic->title }}">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title', $comic->title) }}">
                 @error('title')
                     <div class="invalid-feedback">
                         Please choose a title.

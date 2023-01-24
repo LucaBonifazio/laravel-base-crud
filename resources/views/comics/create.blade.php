@@ -15,7 +15,7 @@
             @csrf
             <div class="mb-3">
                 <label for="thumb" class="form-label">Image</label>
-                <input type="text" class="form-control @error('thumb') is-invalid @enderror @error('thumb') is-invalid @enderror" id="thumb" name="thumb">
+                <input type="text" class="form-control @error('thumb') is-invalid @enderror @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ old('thumb') }}">
                 @error('thumb')
                     <div class="invalid-feedback">
                         Please choose a image.
