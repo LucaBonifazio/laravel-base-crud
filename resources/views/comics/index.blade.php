@@ -24,5 +24,6 @@
             @endforeach
         </div>
         {{ $comics->links() }}
+        <a href="{{ route('comics.create', ['comic' => $comic]) }}" class="btn btn-info m-1">Create</a>
     </div>
 @endsection

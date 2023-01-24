@@ -1,9 +1,12 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <div class="bg_container" style="color: white">
+    <div class="bg_container container p-5" style="color: white">
         <form method="post" action="{{ route('comics.store') }}">
             @csrf
+            <div class="mb-3">
+                <label for="thumb" class="form-label">Image</label>
+                <input type="text" class="form-control" id="thumb" name="thumb">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title">
@@ -18,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
-                <input type="number" class="form-control" id="series" name="series">
+                <input type="text" class="form-control" id="series" name="series">
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Sale date</label>

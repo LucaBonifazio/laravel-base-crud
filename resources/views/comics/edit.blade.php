@@ -6,6 +6,9 @@
             @csrf
             @method('put')
             <div class="mb-3">
+                <label for="thumb" class="form-label">Image</label>
+                <input type="text" class="form-control" id="thumb" name="thumb" value="{{ $comic->thumb }}">
+            <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">
             </div>
