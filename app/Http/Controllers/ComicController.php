@@ -22,11 +22,26 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comics = Comic::paginate(4);
+        $data = $request->all();
 
-        return view('comics.index', compact('comics'));
+        $perPage = $data['per_page'] ?? 5;
+        $searchWord = $data['search'] ?? '';
+
+        if ($searchWord) {
+            $comics = Comic::where('title', 'like', "%{$searchWord}%")
+                            ->orWhere('thumb', 'like', "%{$searchWord}%")
+                            ->paginate($perPage);
+        } else {
+            // chiedera al database la lista di tutte le case (maginari paginate)
+            $comics = Comic::paginate($perPage);
+        }
+
+        return view('comics.index', [
+            'comics'        => $comics,
+            'searchWord'    => $searchWord,
+        ]);
     }
 
     /**
